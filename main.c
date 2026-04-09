@@ -1,6 +1,14 @@
+/*
+Name:NANDAJ E
+Date:4/9/2026
+Proj Name:Arbritary Precision Calculator
+Description:
+
+*/
+
 #include "apc.h"
 
-static void print_signed_result(int sign, node *head)
+void print_signed_result(int sign, node *head)  //To print sign along with the result
 {
     if (is_zero_list(head))
     {
@@ -16,7 +24,7 @@ static void print_signed_result(int sign, node *head)
     print_list(head);
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[])        //main function
 {
     node *head1 = NULL, *tail1 = NULL, *head2 = NULL, *tail2 = NULL, *headR = NULL, *tailR = NULL;
     int sign1, sign2, ret, result_sign;
@@ -41,7 +49,7 @@ int main(int argc, char *argv[])
 	
     switch(oper)
     {
-		case '+':
+		case '+'://case if the operator is +
                 if(sign1 == sign2)
                 {
                     addition(tail1, tail2,&headR, &tailR);
@@ -70,7 +78,7 @@ int main(int argc, char *argv[])
                 }
 			break;
 
-		case '-':
+		case '-':   //case is the operator is -
 				{
                 if(sign1 != sign2)
                 {
@@ -103,7 +111,7 @@ int main(int argc, char *argv[])
 			break;
 			}
 
-		case '*':
+		case '*'://case is the operator is either *,x,X-->(multipliaction)
 		case 'x':
 		case 'X':multiplication(tail1,tail2,&headR,&tailR);
                 remove_pre_zeros(&headR);
@@ -111,13 +119,14 @@ int main(int argc, char *argv[])
                 print_signed_result(result_sign, headR);
 			break;
 
-		case '/':division(head1,head2,tail2,&headR, &tailR);
+		case '/'://case if the operator is /
+                division(head1,head2,tail2,&headR, &tailR);
                 remove_pre_zeros(&headR);
                 result_sign = (sign1 == sign2) ? 1 : -1;
                 print_signed_result(result_sign, headR);
 			break;
 
-		default:
+		default://default case
 			printf("Invalid operator\n");
 			break;
     }

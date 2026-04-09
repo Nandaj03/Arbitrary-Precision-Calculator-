@@ -1,5 +1,6 @@
 #include "apc.h"
 #include<ctype.h>
+/*To validate the command line arguments*/
 int cla_validation(int argc, char *argv[])
 {
     if(argc!=4)
@@ -45,6 +46,7 @@ int cla_validation(int argc, char *argv[])
         }
     return SUCCESS;
 }
+/*function to create list*/
 void create_list(char *opr, node **head, node **tail)
 {
     int i=0;
@@ -59,7 +61,7 @@ void create_list(char *opr, node **head, node **tail)
         i++;
     }    
 }
-
+/*to get the sign of the operand*/
 int get_operand_sign(const char *opr)
 {
     if(opr[0] == '-')
@@ -69,6 +71,7 @@ int get_operand_sign(const char *opr)
     return 1;
 }
 
+/*the insert the node in the first*/
 int insert_first(node **head, node **tail, int data)
 {
     node *new=malloc(sizeof(node));
@@ -94,7 +97,7 @@ int insert_first(node **head, node **tail, int data)
     }
 
 }
-
+/*to insert the node in the last*/
 int insert_last(node **head, node **tail, int data)
 {
     node *new=malloc(sizeof(node));
@@ -121,6 +124,7 @@ int insert_last(node **head, node **tail, int data)
     }
 }
 
+/*to print the list*/
 void print_list(node *head)
 {
 	if (head == NULL)
@@ -142,7 +146,7 @@ void print_list(node *head)
     }
     printf("\n");
 }
-
+/*to check if the list is zero*/
 int is_zero_list(node *head)
 {
     if(head == NULL)
@@ -161,6 +165,7 @@ int is_zero_list(node *head)
     return 1;
 }
 
+/*to delete the list*/
 int delete_list(node **head, node **tail)
 {
     if(*head==NULL)

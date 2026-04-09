@@ -1,5 +1,6 @@
 #include "apc.h"
 
+/*Substrcation function */
 void subtraction(node *tail1, node *tail2, node **headR, node **tailR)
 {
     node *temp1=tail1,*temp2=tail2;
@@ -39,6 +40,7 @@ void subtraction(node *tail1, node *tail2, node **headR, node **tailR)
 
 }
 
+/*Function to compare two lists using its head*/
 int compare_list(node *head1, node *head2)
 {
     int list1_len=list_len(head1);
@@ -63,6 +65,7 @@ int compare_list(node *head1, node *head2)
     }
 }
 
+/*to get the length of the list*/
 int list_len(node *head)
 {
     int len=0;

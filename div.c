@@ -1,5 +1,6 @@
 #include "apc.h"
 
+/*Division function*/
 void division(node *head_L1, node *head_op2,node *tail_op2, node **headR, node **tailR)
 {
     node *head_op1=NULL,*tail_op1=NULL,*L1_temp=head_L1,*head_SR=NULL,*tail_SR=NULL;
@@ -53,6 +54,7 @@ void division(node *head_L1, node *head_op2,node *tail_op2, node **headR, node *
 
     
 }
+/*function to remove prezeros*/
 void remove_pre_zeros(node **head)
 {
     node *temp=*head;

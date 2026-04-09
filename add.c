@@ -1,5 +1,6 @@
 #include "apc.h"
 
+/*Addition function*/
 void addition(node *tail1, node *tail2, node **headR, node **tailR)
 {
     node *temp1=tail1,*temp2=tail2;
