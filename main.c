@@ -2,8 +2,8 @@
 Name:NANDAJ E
 Date:4/9/2026
 Proj Name:Arbritary Precision Calculator
-Description:
-
+Description: Performs arithmetic operations on very large integers using 
+linked lists for arbitrary precision support.
 */
 
 #include "apc.h"
